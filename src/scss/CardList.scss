@@ -1,0 +1,10 @@
+@import './variables';
+
+.card_list {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    max-width: 1600px;
+    background: #1b1b1b;
+}
