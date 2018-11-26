@@ -1,0 +1,68 @@
+@import './variables';
+
+.card {
+    height: 200px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+        .back {
+            height: 200px;
+            .content {
+                opacity: 1;
+            }
+        }
+    }
+    .front {
+        height: 100%;
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #1dac10;
+            // padding: 2rem;
+            height: 100%;
+            .character_image {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                margin-top: 1rem;
+            }
+            .character_name {
+                margin: 0.5rem 0;
+            }
+            .character_type {
+                font-size: 0.825rem;
+                .species {
+
+                }
+                .gender {
+
+                }
+            }
+        }
+    }
+    .back {
+        background: rgba(20, 20, 20, 0.5);
+        transition: all 0.4s ease-in-out;
+        height: 0;
+        width: 350px;
+        position: absolute;
+        overflow-y: hidden;
+        .content {
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            padding: 2rem;
+            p {
+                margin-bottom: 0.45rem;
+                color: white;
+            }
+            .name {
+            }
+            .status {
+            }
+            .location {
+            }
+        }
+    }
+}
