@@ -31,9 +31,12 @@ const Card = (props) => {
                 
                 <div className="back">
                     <div className="content">
-                        <p className="name"><span>Name: </span>{props.name}</p>
-                        <p className="status"><span>Status: </span>{props.status}</p>
-                        <p className="location"><span>Last Location: </span>{props.location}</p>
+                        <p><span>Name: </span>{props.name}</p>
+                        <p><span>Species: </span>{props.species}</p>
+                        <p><span>Gender: </span>{props.gender}</p>
+                        <p><span>Current Status: </span>{props.status}</p>
+                        <p><span>Last Location: </span>{props.location}</p>
+                        <span className="id">id: {props.id}</span>
                     </div>
                 </div>
             </div>

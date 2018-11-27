@@ -1,0 +1,73 @@
+@import 'variables';
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background: #1b1b1b;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    .logo {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .image {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/2000px-Rick_and_Morty.svg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 50px;
+            width: 200px;
+        }
+    }
+    .refresh {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+            text-decoration: none;
+            background: $blue;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-weight: 600;
+            border-radius: 2rem;
+            i {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        // flex-direction: column;
+        .logo {
+            // margin: 0.5rem 0 1rem;
+        }
+        .refresh {
+
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav {
+        .logo {
+            width: 55%;
+            justify-content: center;
+            .image {
+                width: 150px;
+            }
+        }
+
+        .refresh {
+            width: 45%;
+        }
+    }
+}

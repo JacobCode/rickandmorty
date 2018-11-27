@@ -1,10 +1,31 @@
 @import './variables';
 
 .card_list {
-    padding: 2rem;
+    padding: 3rem 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
     max-width: 1600px;
     background: #1b1b1b;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 992px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .card_list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card_list {
+        grid-template-columns: 1fr;
+    }
 }

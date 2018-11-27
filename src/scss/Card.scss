@@ -8,15 +8,18 @@
     -webkit-box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.75);
+    cursor: default;
     .container {
         width: 100%;
         height: 250px;
-        
         &:hover {
             .back {
-                height: 250px;
+                height: 100%;
                 .content {
                     opacity: 1;
+                    .id {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -35,7 +38,7 @@
                 align-items: center;
                 justify-content: center;
                 width: 100%;
-
+                padding: 0 2rem;
                 .character_image {
                     height: 100px;
                     width: 100px;
@@ -46,20 +49,22 @@
                 .character_name {
                     margin: 0.5rem 0 0.25rem;
                     color: white;
+                    text-align: center;
                 }
 
                 .character_type {
                     font-size: 1.2rem;
                     color: white;
-
                     .species {
                         padding: 0 0.25rem;
                         font-family: $displayFont;
+                        text-transform: capitalize;
                     }
 
                     .gender {
                         padding: 0 0.25rem;
                         font-family: $displayFont;
+                        text-transform: capitalize;
                     }
                 }
             }
@@ -85,17 +90,70 @@
                     font-family: $displayFont;
                     line-height: 1.2;
                     text-transform: capitalize;
+                    font-size: 1.025rem;
                     span {
                         margin-right: 0.25rem;
                         font-size: 0.925rem;
                     }
                 }
-                .name {}
-
-                .status {}
-
-                .location {}
+                .id {
+                    opacity: 0;
+                    transition: all 0.4s ease-in-out;
+                    position: absolute;
+                    bottom: 2rem;
+                    right: 2rem;
+                    font-size: 0.75rem;
+                    background: $blue;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 1rem;
+                    color: white;
+                }
             }
         }
     }
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        .container {
+            .front {
+                .content {
+                    .character_image {
+                    }
+
+                    .character_name {
+                    }
+
+                    .character_type {
+                    }
+                }
+            }
+
+            .back {
+                .content {
+                    p {
+
+                    }
+
+                    .name {}
+
+                    .status {}
+
+                    .location {}
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
 }
