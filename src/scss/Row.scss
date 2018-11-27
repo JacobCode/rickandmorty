@@ -1,0 +1,62 @@
+@import './variables';
+
+.row {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    &:first-of-type {
+        // border-top: 2px solid red;
+    }
+
+    &:last-of-type {
+        border: none;
+    }
+
+    span {
+        display: flex;
+
+        h5 {
+            width: 100%;
+            font-weight: initial;
+            color: $green;
+        }
+
+        &.id,
+        &.episode_val, &.air_date {
+            h5 {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .row {
+        span {
+            &.id {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        span {
+            &.air_date {
+                // display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .row {
+        span {
+            &.id {
+                display: none;
+            }
+        }
+    }
+}

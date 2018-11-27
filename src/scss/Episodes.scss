@@ -1,0 +1,108 @@
+@import 'variables';
+
+.episodes_container {
+    padding: 2rem;
+    background: $blue;
+    background: #1b1b1b;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+// Column layout
+.col-lg {
+    width: 40%;
+}
+.col-sm {
+    width: 20%;
+}
+
+.episode {
+    min-width: 300px;
+    h1 {
+        margin-bottom: 4rem;
+        color: white;
+    }
+    .titles {
+        display: flex;
+        margin-bottom: 2rem;
+        h4 {
+            font-family: $displayFont;
+            color: white;
+            &.id,
+            &.episode_val,
+            &.air_date {
+                text-align: right;
+            }
+        }
+    }
+    .rows {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 4rem;
+        grid-row-gap: 2rem;
+        grid-auto-flow: row;
+        .page {
+            min-width: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    // Column layout
+    .col-lg {
+        width: 60%;
+    }
+
+    .col-sm {
+
+    }
+    .episode {
+        .titles {
+            .id {
+                display: none;
+            }
+        }
+        .rows {
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+            .page {
+                min-width: 300px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    // Column layout
+    .col-lg {
+        width: 60%;
+    }
+
+    .col-sm {
+        width: 40%;
+    }
+
+    .episode {
+        .rows {
+            grid-template-columns: 1fr;
+            grid-column-gap: 2rem;
+            grid-row-gap: 2rem;
+            .page {
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    // Column layout
+    .col-lg {
+        width: 60%;
+    }
+    .episode {
+        .titles {
+            .id {
+                display: none;
+            }
+        }
+    }
+}

@@ -7,6 +7,7 @@ import './App.scss';
 // Components
 import Header from './components/Header';
 import CardList from './components/CardList';
+import Episodes from './components/Episodes'
 import Footer from './components/Footer';
 
 // Random number
@@ -26,10 +27,12 @@ class App extends Component {
       totalCharacters: 0,
       totalLocations: 0,
       totalEpisodes: 0,
+      episodeData: null,
+      episodeData2: null,
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ isLoading: true });
     // API call
     axios.get(this.state.url)
@@ -48,18 +51,27 @@ class App extends Component {
       return axios.get('https://rickandmortyapi.com/api/location/');
     })
     .then((result) => {
-      // Set total location number then get episode url
+      // Set total location number then get episode url page 1
       this.setState({
         totalLocations: result.data.info.count,
       })
       return axios.get('https://rickandmortyapi.com/api/episode/');
     })
-    .then((result) => {
-      // Set total episode number and stop loading 
+    .then(result => {
+      // Retrieve data then get character url
       this.setState({
+        // Set total episode number then get episode url page 2
         totalEpisodes: result.data.info.count,
-        isLoading: false,
+        episodeData: result.data.results,
       })
+      return axios.get('https://rickandmortyapi.com/api/episode/?page=2');
+    })
+    .then(result => {
+      // Retrieve data then get character url
+      this.setState({
+        episodeData2: result.data.results,
+        isLoading: false
+      });
     })
   }
 
@@ -70,6 +82,8 @@ class App extends Component {
       totalCharacters,
       totalLocations,
       totalEpisodes,
+      episodeData,
+      episodeData2,
     } = this.state;
 
     // While loading
@@ -87,6 +101,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <CardList data={data} />
+          <Episodes episodeData={episodeData} episodeData2={episodeData2} />
           <Footer totalCharacters={totalCharacters} totalLocations={totalLocations} totalEpisodes={totalEpisodes} />
         </div>
       );
