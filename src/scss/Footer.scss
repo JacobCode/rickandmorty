@@ -5,6 +5,8 @@
     padding: 2rem;
     display: flex;
     justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
     .left {
         .info {
             justify-content: space-evenly;
