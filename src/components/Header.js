@@ -31,7 +31,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <div className="refresh">
-                    <a href="./">Refresh <i className="fas fa-sync-alt"></i></a>
+                    <a href="./index.html">Refresh <i className="fas fa-sync-alt"></i></a>
                 </div>
             </div>
         )

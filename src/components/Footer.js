@@ -22,7 +22,7 @@ const Footer = (props) => {
             </div>
             <div className="right">
                 <div className="links">
-                    <a href="./">Refresh Page</a>
+                    <a href="./index.html">Refresh Page</a>
                     <a href="https://rickandmortyapi.com/">Rick & Morty API</a>
                     <a href="https://rickandmortyapi.com/documentation">API Documentation</a>
                     <a href="https://github.com/JacobCode/rickandmorty">Source</a>
