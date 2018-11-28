@@ -29,6 +29,32 @@
             }
         }
     }
+    * {
+        ::selection {
+            background-color: $green;
+            color: #fff;
+        }
+
+        ::-moz-selection {
+            background-color: $green;
+            color: #fff;
+        }
+
+        ::-o-selection {
+            background-color: $green;
+            color: #fff;
+        }
+
+        ::-ms-selection {
+            background-color: $green;
+            color: #fff;
+        }
+
+        ::-webkit-selection {
+            background-color: $green;
+            color: #fff;
+        }
+    }
 }
 
 @media screen and (max-width: 992px) {

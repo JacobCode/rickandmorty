@@ -15,6 +15,8 @@ var randomNum = Math.floor(Math.random() * 26);
 
 // Different pages containing characters (default page: 1)
 var url = 'https://rickandmortyapi.com/api/character/?page=' + randomNum;
+// The page containing character after the first url
+var url2 = 'https://rickandmortyapi.com/api/character/?page=' + (randomNum + 1);
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +24,9 @@ class App extends Component {
     // Set initial state
     this.state = {
       url: url,
+      url2: url2,
       data: [],
+      data2: [],
       isLoading: true,
       totalCharacters: 0,
       totalLocations: 0,
@@ -41,6 +45,15 @@ class App extends Component {
       this.setState({ 
         data: result.data.results,
       });
+      console.log(this.state.url);
+      return axios.get(this.state.url2);
+    })
+    .then(result => {
+      // Retrieve data then get character url
+      this.setState({
+        data2: result.data.results,
+      });
+      console.log(this.state.url2);
       return axios.get('https://rickandmortyapi.com/api/character/');
     })
     .then((result) => {
@@ -78,6 +91,7 @@ class App extends Component {
   render() {
     const {
       data,
+      data2,
       isLoading,
       totalCharacters,
       totalLocations,
@@ -100,7 +114,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header />
-          <CardList data={data} />
+          <CardList data={data} data2={data2} />
           <Episodes episodeData={episodeData} episodeData2={episodeData2} />
           <Footer totalCharacters={totalCharacters} totalLocations={totalLocations} totalEpisodes={totalEpisodes} />
         </div>
